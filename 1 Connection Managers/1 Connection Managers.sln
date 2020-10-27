@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "1 Connection Managers", "1 Connection Managers.dtproj", "{E2497557-28B0-4D4D-8ECA-5DEDA9E1B3D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2497557-28B0-4D4D-8ECA-5DEDA9E1B3D3}.Development|Default.ActiveCfg = Development
+		{E2497557-28B0-4D4D-8ECA-5DEDA9E1B3D3}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C66B58D-4AEC-4AB0-9A3C-A7879633F996}
+	EndGlobalSection
+EndGlobal

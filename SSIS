@@ -45,6 +45,13 @@ Basic Terminology:
    - Any development done in SSIS is within what's known as a package.
 2. Connection Manager
    - Stores the connection string information for your sources and destinations that will be used in a package.
+   - Package level connection manager
+   - Project level connection manager
+   - Steps: 1. New Connection Manager
+            2. Provider - SQL Server Native Client
+			3. Server Name - 
+			4. Authentication - Windows Authentication
+			5. Database - 
 3. Control Flow
    - The component of SSIS packages that controls the order of operations and flow of a package. 
    - There can be only one of these per package.

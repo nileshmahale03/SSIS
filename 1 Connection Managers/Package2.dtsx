@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/26/2020 10:51:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NILESH-THINKPAD"
+  DTS:CreatorName="NILESH-THINKPAD\Nilesh"
+  DTS:DTSID="{82BC7EFA-58E2-4D02-A6FE-83966E55E451}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.71"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{EF2F880A-31CD-4A81-A6CC-75EC5F817DD2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>
