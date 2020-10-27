@@ -1,0 +1,71 @@
+SSIS:
+1.  Integration Services Overview
+2.  Control Flow & Data Flow
+3.  Variables, Parameters, Expressions
+4.  Containers
+5.  Troubleshooting SSIS
+6.  Loading a Dimension Table
+7.  Loading a Fact Table
+8.  Deploying SSIS Packages
+9.  Configuring for Portability
+10. SSIS Server Executions
+11. Auditing & Notification Framework 
+
+Softwares:
+1. Visual Studio - BIDS(2005, 2008, 2008R2)/SSDT(2012, 2014, 2016, 2017, 2019)
+2. SQL Server Management Studio - For administration and scheduling on SSIS
+
+SSIS is an ETL/ELT tool. 
+Extract   = Pull data out of one or more sources i.e. CRM, Sales, HR, Finance etc..
+Transform = Apply business rules to the data. 
+Load      = Send the final resulting data into a one common destination. 
+
+Why SSIS?
+1. Data Source Integration e.g. SQL Server, Oracle, .CSV, Excel 
+2. Data Warehouse Ready
+3. Data Cleansing - correcting bad data
+
+SSIS use cases:
+1. Data Flow - SCD: I need to load a data warehouse dimension table without duplicating data each time I run the load.
+2. Data Flow - FTP: I need to download and load files from an FTP server. 
+3. Data Flow - DQS: I have data quality problems when load state data from Customers (CA, ca, California)
+
+Job Duties:
+1. In charge of the overall data warehouse design
+2. Develops the data loading process
+3. Reposnsible for data cleansing and accuracy
+4. Create analytical layer that business users interact with
+5. Designs reports based on business user specification
+6. Write formulas to store necessary calculations for the business
+7. Create report delivery mechanisms to send report directly to users
+
+Basic Terminology:
+1. Package
+   - The unit of work for SSIS. 
+   - Any development done in SSIS is within what's known as a package.
+2. Connection Manager
+   - Stores the connection string information for your sources and destinations that will be used in a package.
+3. Control Flow
+   - The component of SSIS packages that controls the order of operations and flow of a package. 
+   - There can be only one of these per package.
+4. Tasks
+   - These tells SSIS what operations to perform in the Control Flow. 
+5. Precedence Constraints
+   - A part of the Control Flow that directs movement between multiple Control Flow Tasks. 
+6. Data Flow
+   - This is one specific Task that coordinates data movement and transformations. 
+   - This is generally where most ETL/ELT work is done. 
+7. Transformations
+   - Within a Data Flow transforms allow you to apply business rules to your data prior to loading it into a destination.
+8. Event Handler
+   - Component of SSIS that allows you to control what happens in the event of an error. 
+
+
+
+
+
+
+
+
+
+ 
