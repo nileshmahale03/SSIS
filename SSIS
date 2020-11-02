@@ -80,9 +80,15 @@ Demo
 	- 1. Data Flow Task
 	- 2. Execute SQL Task
 	- 3. Execute Package Task
-	- 4. Sequence Containers
-	- 5. For Loop Container
-	- 6. Foreach Loop Containers
+	- 4. Group Container
+	- 5. Sequence Containers
+	- 6. For Loop Container
+	     - repeat same job multiple number of times
+	     - Similar to WHILE Loop in T-SQL
+		 - WHILE i==0, i<10, i++
+	- 7. Foreach Loop Containers
+	     - Loops over a set number of items such as files 
+		 - load number of files into same table
 	- Precedence Constraint 
 		- Constraint AND/OR Expressions
 			- Success
@@ -162,6 +168,8 @@ Demo
 	- 4. Ragged right
 
 5. SSIS Variables
+	- Breakpoint
+	- Watch
 
 6. SSIS Parameters
 	- 1. SQL Parameters (?)
