@@ -45,13 +45,6 @@ Basic Terminology:
    - Any development done in SSIS is within what's known as a package.
 2. Connection Manager
    - Stores the connection string information for your sources and destinations that will be used in a package.
-   - Package level connection manager
-   - Project level connection manager
-   - Steps: 1. New Connection Manager
-            2. Provider - SQL Server Native Client
-			3. Server Name - 
-			4. Authentication - Windows Authentication
-			5. Database - 
 3. Control Flow
    - The component of SSIS packages that controls the order of operations and flow of a package. 
    - There can be only one of these per package.
@@ -59,17 +52,132 @@ Basic Terminology:
    - These tells SSIS what operations to perform in the Control Flow. 
 5. Precedence Constraints
    - A part of the Control Flow that directs movement between multiple Control Flow Tasks. 
-6. Data Flow
+   - Success, Failure, Completion 
+   - AND/OR Operations
+6. Containers
+   - Can be used for organizing elements of a package.
+   - Some containers have the ability to loop or iterate over control flow tasks. 
+7. Data Flow
    - This is one specific Task that coordinates data movement and transformations. 
    - This is generally where most ETL/ELT work is done. 
-7. Transformations
+8. Transformations
    - Within a Data Flow transforms allow you to apply business rules to your data prior to loading it into a destination.
-8. Event Handler
+9. Event Handler
    - Component of SSIS that allows you to control what happens in the event of an error. 
 
+Demo
+1. Connection Managers
+   - Package level connection manager
+   - Project level connection manager
+   - Steps: 1. New Connection Manager
+            2. Provider - SQL Server Native Client
+			3. Server Name - 
+			4. Authentication - Windows Authentication
+			5. Database - 
+            6. Test Connection
 
+2. Control Flow
+	- 1. Data Flow Task
+	- 2. Execute SQL Task
+	- 3. Execute Package Task
+	- 4. Sequence Containers
+	- 5. For Loop Container
+	- 6. Foreach Loop Containers
+	- Precedence Constraint 
+		- Constraint AND/OR Expressions
+			- Success
+			- Failure
+			- Completion
+			
+3. Data Flow Task
+	- Source
+		- 1. Excel Source
+		- 2. Flat File Source
+		- 3. OLE DB Source
+			 Data access mode
+				i. Table or View 
+					- (not good option for performance)
+				ii. SQL command 
+					- (lean towards using this option)
+					- we can also use parameters and variables 
+		- 4. Raw File Source
+		- 5. XML Source
+	- Transformations
+		- 1. Aggregate
+		- 2. Character Map
+		- 3. Conditional Split
+			1. allows you to divert rows based on an SSIS expression you write
+		- 4. Derived Column
+		- 5. Fuzzy Grouping
+		- 6. Fuzzy Lookup
+		- 7. Lookup
+			1. Similar to SQL join
+			2. Ignore Failure = LEFT OUTER Join
+			3. Default behavior = Fail component
+			4. Cache Mode = Full cache, Partial cache, No cache
+		- 8. Merge
+			1. Similar to Union All but sorted 
+		- 9. Merge Join
+			1. Similar to FULL, LEFT, or INNER join. 
+			2. Input has to be sorted. 
+		- 10. Multicast
+		- 11. Pivot
+		- 12. Row Count
+		- 13. Slowly Changing Dimension
+		- 14. Sort
+		- 15. Term Extraction
+		- 16. Term Lookup
+		- 17. Union All
+			1. Temporary destination to test ETL
+		- 18. Unpivot
+	- Destinations
+		- 1. Excel Destination
+		- 2. Flat File Destination
+		- 3. OLE DB Destination
+			 Data access mode
+				i. Table or View - Fast load
+			 Destination Options
+				i. Keep Identity
+				ii. Table Lock
+		- 4. Raw File Destination
+		- 5. Recordset Destination
+		- 6. SQL Server Destination
+    - Data Flow Path Editor
+		- Metadata
+		- Data Viewer
+    - Error Output
+		- Error
+			- Fail component 
+			- Ignore failure
+			- Redirect row
+		- Truncation
+			- Fail component 
+			- Ignore failure
+			- Redirect row		
 
+4. Flat File Format
+	- 1. Delimited (seperated)
+	- 2. Fixed width
+	- 3. Fixed width with row delimiters
+	- 4. Ragged right
 
+5. SSIS Variables
+
+6. SSIS Parameters
+	- 1. SQL Parameters (?)
+	- 2. Package Parameters
+	- 3. Project Parameters
+
+7. SSIS Expressions
+	- 1. Tasks
+	- 2. Connections - Change connection string dynamically. 
+	- 3. Variables - Change a Variable Output dynamically.
+	- 4. Precedence Constraints - Change the Constraint Direction dynamically.
+	- 5. Data Flow - e.g. Conditional Split, Derived Column 
+
+8. Loading a Dimension Table
+
+9. Loading a Fact Table
 
 
 
