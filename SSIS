@@ -184,11 +184,46 @@ Demo
 	- 5. Data Flow - e.g. Conditional Split, Derived Column 
 
 8. Loading a Dimension Table
-
+	- 1. Decision Point
+		- is this new row?
+		- is this row an update?
+		- is this row a duplicate?
+	- 2. Column Type
+		- Type 0
+		- Type 1
+		- Type 2
+	- 3. SCD Wizard
+		- + point
+			- faster development
+			- customizable 
+		- Weaknesses
+			- Maintenance
+			- Speed (OLE DB commnd is row by row operation)
+			- Scalability
+	- 4. Late arriving dimension 
+		- Inferred dimension member: used when a fact table may reference dimension members
+		                             that are not yet loaded. 
+	
 9. Loading a Fact Table
 
+10. Troubleshooting SSIS 
+	- 1. Adding Data Viewer -> pause the progress of the data flow and allow you to view the data and validate transformation logic
+	- 2. Using Breakpoint - pause an SSIS package and evaluate variable values
+	- 3. Debug -> Watch 
+	- 4. Debug -> Locals 
+	- 3. Execution Results Tab -> Finding Error Messages
+	- 4. Enabling Error Output in Data Flow Tasks
 
+11. Deploying SSIS Package
+	- 1. 2005 & 2008: Package Deployment Model
+		- MSDB or File System
+	- 2. 2012 or Higher: Project Deployment Model
+		- SSIS Catlog / SSISDB
+	
+12. SSIS Package Configuration for Portability
 
+13. SSIS Execution
 
+14. Setting up Auditing and Notification
 
  

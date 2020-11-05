@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "4 Slowly Changing Dimension", "4 Slowly Changing Dimension.dtproj", "{169C8742-BD64-4E74-A1FB-39838FAA8D1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{169C8742-BD64-4E74-A1FB-39838FAA8D1A}.Development|Default.ActiveCfg = Development
+		{169C8742-BD64-4E74-A1FB-39838FAA8D1A}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03092677-B3BD-4E77-9E47-81B37B8C965A}
+	EndGlobalSection
+EndGlobal

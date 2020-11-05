@@ -1,0 +1,42 @@
+Data Warehouse:
+1. Why not report from Transactional System?
+	- 1. Designed for INSERT/UPDATE
+	- 2. Getting required report data may involve multiple joins i.e. lengthy queries
+	- 3. Usually dosen't store history 
+	- 4. Reporting on this database can slow down the application it is used for
+	
+2. Why build a Data Warehouse?
+	- 1. Optimized Reporting
+	- 2. Archival of Data
+	- 3. Consolidation of Data
+	
+3. Dimensional Model
+	- 1. Highly Denormalized - Table merged logically for reporting
+	- 2. Table Types - Fact and Dimension Tables 
+	- 3. Only fields Needed for Reporting 
+	
+4. Dimension Table
+	- 1. Answer WHERE clause
+	- 2. Wide Tables 
+	- 3. Contain Surrogate Key 
+
+5. Fact Table
+	- 1. Stored Metric Data
+	- 2. Relationships - Fact tables intersect dimensions
+	- 3. Types: 
+		- 1. Transactional
+		- 2. Periodic snapshot
+		- 3. Accumulating snapshot
+	- Surrogate keys, not business keys (alternate keys), are stored in the fact tables.
+	
+6. Surrogate Keys
+
+7. Dimension Types
+	- 1. Type 0: Fixed, non changing 
+	- 2. Type 1: Changing attribute, no history kept
+	- 3. Type 2: Changing attribute, keeps historical changes
+	
+8. Star Schema
+
+9. Snowflake Schema
+
