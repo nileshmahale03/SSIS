@@ -113,6 +113,7 @@ Demo
 		- 2. Character Map
 		- 3. Conditional Split
 			1. allows you to divert rows based on an SSIS expression you write
+		- 4. Data Conversion
 		- 4. Derived Column
 		- 5. Fuzzy Grouping
 		- 6. Fuzzy Lookup
@@ -205,6 +206,12 @@ Demo
 		                             that are not yet loaded. 
 	
 9. Loading a Fact Table
+	- all the dimensions all loaded first then we load the fact tables since we have lookup against dimensions
+	- retrieve the surrogate key from each dimension during a fact load using Lookup
+	- handle rows with no matching entries in the SSIS Lookup transform using Ignore Failure
+	- replace NULL surrogate key values with -1 using Derived Column
+	- Error: cannot map the input column to the lookup column because the data types do not match
+	- Resolution: Open the Flat File Connection Manager -> Go To Advanced Tab -> Click on the Column and change the Data Type from DT_STR to DT_WSTR
 
 10. Troubleshooting SSIS 
 	- 1. Adding Data Viewer -> pause the progress of the data flow and allow you to view the data and validate transformation logic
