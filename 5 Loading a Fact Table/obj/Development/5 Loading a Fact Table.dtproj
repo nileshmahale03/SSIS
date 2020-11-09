@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">NILESH-THINKPAD</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJ6K1LBleKEyACdgR/dUYogAAAAACAAAAAAAQZgAAAAEAACAAAACxapZvfHnw8NPN01HkBEFq659vXf2nC+oo7h6dTAprXQAAAAAOgAAAAAIAACAAAACL/aqbN2MdQRzi/l51fVDbJ8H8eaZZJPF4OmYsDmxYoJAAAAAjvgZoCfvKNp3vZOmUb72V34KJGXJ0D7X6hJ8GoqwogxPDI4Sd1GIR3HKriZWZxwEpEyt9nPjcSgXWvDzKWjXgbnF6aE13dsvGlJ8uPPXpFXJX4YQjn+Nfx48H0BcphkLi68cvq/Tji1eu2P5p7LYHZKXgDI+S6lkh7Q6dBz6BJICTzRUlyXjW1oHDXSDt9ZVAAAAADGgmPAKGr0xEQuNaMwO3uamz4OO7NY0rMAFQYJo27ZH+Rb56gp9nvz0ic8ZdGsRFEnMJX+nx+FjePn4e5a/8vA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJ6K1LBleKEyACdgR/dUYogAAAAACAAAAAAAQZgAAAAEAACAAAACokyhu2LSdN5nu0Bnyb9YMcxu9iZmxbf//qoPFCl6IFwAAAAAOgAAAAAIAACAAAAD/13Xe4PFb2NrxPqBDD5xuFbCbja++v3oL/faORs756JAAAABDs+lT6AUKD1YefOg/2YQ9D6lTmfwuFW7wrLVQucGaPc1bR/TCSGK6mwClpH5gWlvQqDmc3dCJxXvfW4JjTIv2hbmx4x+vaIDlJg39DeJfyTf5a08NPVHeonnduEKrd1V03Wwrn0xKZ0zqLkvl8BW0re26eMz+7vdCib5fZ/Tv7lr/VwVInKaWmPTU7NkLL0hAAAAAO9MAgUH3wmXrQliuYRbQIwJ5MJwLzLrke1wZEg2ZRhtdSGBaLuRAl8qm0QbZLiAMhz/Nhu5Fhy4tzEGYSEIThg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,16 +42,30 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">16</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">24</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{67EE440C-E242-4AC6-8C8F-BC47CA3FA110}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{682EB735-EADF-407C-88D9-76637C9511CE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
+                <SSIS:Parameter SSIS:Name="FactFactResellerSales_ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">{8658BE9A-C80A-4085-AE75-ED505BBD0E69}</SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">C:\Users\Nilesh\OneDrive - California State University, Northridge\FILES\documents\ZG.GitHub\SSIS\SSIS\5 Loading a Fact Table\FactResellerSales.txt</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Fact FactResellerSales.AlwaysCheckForRowDelimiters">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
@@ -110,21 +124,6 @@
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.Fact FactResellerSales.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">C:\Users\Nilesh\OneDrive - California State University, Northridge\FILES\documents\ZG.GitHub\SSIS\SSIS\5 Loading a Fact Table\FactResellerSales.txt</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
                 <SSIS:Parameter SSIS:Name="CM.Fact FactResellerSales.DataRowsToSkip">

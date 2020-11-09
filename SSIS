@@ -114,29 +114,29 @@ Demo
 		- 3. Conditional Split
 			1. allows you to divert rows based on an SSIS expression you write
 		- 4. Data Conversion
-		- 4. Derived Column
-		- 5. Fuzzy Grouping
-		- 6. Fuzzy Lookup
-		- 7. Lookup
+		- 5. Derived Column
+		- 6. Fuzzy Grouping
+		- 7. Fuzzy Lookup
+		- 8. Lookup
 			1. Similar to SQL join
 			2. Ignore Failure = LEFT OUTER Join
 			3. Default behavior = Fail component
 			4. Cache Mode = Full cache, Partial cache, No cache
-		- 8. Merge
+		- 9. Merge
 			1. Similar to Union All but sorted 
-		- 9. Merge Join
+		- 10. Merge Join
 			1. Similar to FULL, LEFT, or INNER join. 
 			2. Input has to be sorted. 
-		- 10. Multicast
-		- 11. Pivot
-		- 12. Row Count
-		- 13. Slowly Changing Dimension
-		- 14. Sort
-		- 15. Term Extraction
-		- 16. Term Lookup
-		- 17. Union All
+		- 11. Multicast
+		- 12. Pivot
+		- 13. Row Count
+		- 14. Slowly Changing Dimension
+		- 15. Sort
+		- 16. Term Extraction
+		- 17. Term Lookup
+		- 18. Union All
 			1. Temporary destination to test ETL
-		- 18. Unpivot
+		- 19. Unpivot
 	- Destinations
 		- 1. Excel Destination
 		- 2. Flat File Destination
@@ -222,15 +222,46 @@ Demo
 	- 4. Enabling Error Output in Data Flow Tasks
 
 11. Deploying SSIS Package
-	- 1. 2005 & 2008: Package Deployment Model
-		- MSDB or File System
+	- 1. 2005 & 2008  : Package Deployment Model
+		- MSDB        : Deploy individual packages to MSDB SQL Server Database
+        - File System : Deploy individual packages to Windows File System Location
 	- 2. 2012 or Higher: Project Deployment Model
-		- SSIS Catlog / SSISDB
+		- SSIS Catalog : Deploy entire project instead of individual packages 
+		  SSIS DB        2016 and above- Can also Deploy individual packages while still using a project deployment model 
+						 All SSIS objects are stored in SQL Server
+						 Each instance of SQL Server can have only ONE Catalog 
+						 Project Versioning built-in
+						 In the SSIS Project deployment model an .ispac file is created for deployment
 	
 12. SSIS Package Configuration for Portability
-
+	- 1. 2005 & 2008   : Makes any property configurable externally from the package. 
+	                     Options - Files (XML) or Tables (SSIS Configuration)
+	- 2. 2012 or Higher: 1. Enviornments - DEV, PRD
+	                     2. Enviornment Variables - DEV: ZG.GitHub\SSIS\SSIS\5 Loading a Fact Table\DEV
+						                       - PRD: ZG.GitHub\SSIS\SSIS\5 Loading a Fact Table\PRD
+						 3. Enviornment References 
+						 4. Package/Project Parameters
+						 5. Configure parameter to use the enviornment varibale 
 13. SSIS Execution
+	- 1. GUI
+	- 2. T-SQL
+		EXEC [SSISDB].[catalog].[create_execution]
+		EXEC [SSISDB].[catalog].[set_execution_parameter_value]
+		EXEC [SSISDB].[catalog].[start_execution] @execution_id
+	- 3. Command Prompt - DTExec.exe
+	     "C:\Program Files\Microsoft SQL Server\150\DTS\Binn\DTExec.exe" /f 
+		 "C:\Users\Nilesh\OneDrive - California State University, Northridge\FILES\documents\ZG.GitHub\SSIS\SSIS\5 Loading a Fact Table\Package.dtsx"
+	
+14. SSIS Scheduling
+	- 1. SQL Server Agent Job
+		- SQL Server Agent Service Account: NT Service\SQLSERVERAGENT
+		- SQL Server Configuration Manager: SQLServerManager15.msc
+	- 2. Windows Task Scheduler
+	- 3. Proxy Account
+		- 1. Credentials
+		- 2. Creating a proxy account
+		- 3. Applying the proxy account to the job
 
-14. Setting up Auditing and Notification
+15. Setting up Auditing and Notification
 
  

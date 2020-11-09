@@ -4,6 +4,8 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
+        <ServerName>Nilesh-THINKPAD</ServerName>
+        <PathOnServer>/SSISDB/Loading a Fact Table/5 Loading a Fact Table</PathOnServer>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
