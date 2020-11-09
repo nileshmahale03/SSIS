@@ -263,5 +263,12 @@ Demo
 		- 3. Applying the proxy account to the job
 
 15. Setting up Auditing and Notification
-
+	- 1. Logging
+		- System Tables -> dbo.sysssislog
+	- 2. Notification
+		- Event Handler: Send Mail Task
+		- Event Handlers execute tasks when events like errors or warnings occur in a package during execution
+	- 3. SSIS Reports
+		- Reports -> All Executions
+        - Prebuilt dashboard and reports for package executions
  
