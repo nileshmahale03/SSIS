@@ -115,8 +115,8 @@ Demo
 			1. allows you to divert rows based on an SSIS expression you write
 		- 4. Data Conversion
 		- 5. Derived Column
-		- 6. Fuzzy Grouping
-		- 7. Fuzzy Lookup
+		- 6. Fuzzy Grouping - Getting rid of Duplicate Data
+		- 7. Fuzzy Lookup - Keeping your Data Clean 
 		- 8. Lookup
 			1. Similar to SQL join
 			2. Ignore Failure = LEFT OUTER Join
@@ -128,15 +128,16 @@ Demo
 			1. Similar to FULL, LEFT, or INNER join. 
 			2. Input has to be sorted. 
 		- 11. Multicast
-		- 12. Pivot
-		- 13. Row Count
-		- 14. Slowly Changing Dimension
-		- 15. Sort
-		- 16. Term Extraction
-		- 17. Term Lookup
-		- 18. Union All
+		- 12. OLE DB Command
+		- 13. Pivot
+		- 14. Row Count
+		- 15. Slowly Changing Dimension
+		- 16. Sort
+		- 17. Term Extraction
+		- 18. Term Lookup
+		- 19. Union All
 			1. Temporary destination to test ETL
-		- 19. Unpivot
+		- 20. Unpivot
 	- Destinations
 		- 1. Excel Destination
 		- 2. Flat File Destination
@@ -185,6 +186,7 @@ Demo
 	- 5. Data Flow - e.g. Conditional Split, Derived Column 
 
 8. Loading a Dimension Table
+    - Need 3 things - Source -> Decision Point -> Column Type
 	- 1. Decision Point
 		- is this new row?
 		- is this row an update?
@@ -193,25 +195,41 @@ Demo
 		- Type 0
 		- Type 1
 		- Type 2
-	- 3. SCD Wizard
-		- + point
-			- faster development
-			- customizable 
+	- 3. Design Pattern 1: SCD Wizard
+		- Strengths 
+			- Faster development
+			- Customizable 
+				- 1. Use RetainSameConnection = True (Holds open the connection manager open for the entirety of the package)
+				- 2. Table or View vs. Fast Load
 		- Weaknesses
-			- Maintenance
-			- Speed (OLE DB commnd is row by row operation)
-			- Scalability
+			- Maintenance - Customization are erased if wizards is used again.
+			- Speed (OLE DB commnd is row by row operation) - Use RetainSameConnection = True
+			- Scalability - It does not scale well for larger dimensions with many updates
+			- SCD Wizrd does not handle active Flags and End dates at the same time.
 	- 4. Late arriving dimension 
 		- Inferred dimension member: used when a fact table may reference dimension members
 		                             that are not yet loaded. 
+	- 5. Design Pattern 2: Upsert Pattern using Lookup 
+		- Source -> Lookup -> Conditional Split -> Destination 
+		- conditional split determines which rows are new and which are updates
+		- A disadvantage to checking for updates is 
+			- that it can be code intensive if you have to check hundreds of columns
+			- Stores source table and destination table in memory for comparison
+	- 6. Design Pattern 3: Upsert Pattern using Merge 
+		- Source -> Merge -> Conditional Split -> Destination 
 	
 9. Loading a Fact Table
-	- all the dimensions all loaded first then we load the fact tables since we have lookup against dimensions
-	- retrieve the surrogate key from each dimension during a fact load using Lookup
-	- handle rows with no matching entries in the SSIS Lookup transform using Ignore Failure
-	- replace NULL surrogate key values with -1 using Derived Column
-	- Error: cannot map the input column to the lookup column because the data types do not match
-	- Resolution: Open the Flat File Connection Manager -> Go To Advanced Tab -> Click on the Column and change the Data Type from DT_STR to DT_WSTR
+	- All the dimensions all loaded first then we load the fact tables since we have lookup against dimensions
+	- 1. Truncate and Reload 
+		- Source -> Lookup -> Dervied Column -> Destination 
+			- retrieve the surrogate key from each dimension during a fact load using Lookup
+			- handle rows with no matching entries in the SSIS Lookup transform using Ignore Failure
+			- replace NULL surrogate key values with -1 using Derived Column
+		- Error: cannot map the input column to the lookup column because the data types do not match
+		- Resolution: Open the Flat File Connection Manager -> Go To Advanced Tab -> Click on the Column and change the Data Type from DT_STR to DT_WSTR
+	- 2. Incremental Load Pattern
+		- Check Control table -> Load data -> Update control table 
+	- 3. Change Data Capture (CDC)
 
 10. Troubleshooting SSIS 
 	- 1. Adding Data Viewer -> pause the progress of the data flow and allow you to view the data and validate transformation logic
@@ -220,6 +238,17 @@ Demo
 	- 4. Debug -> Locals 
 	- 3. Execution Results Tab -> Finding Error Messages
 	- 4. Enabling Error Output in Data Flow Tasks
+
+11. Performance Tuning SSIS
+	- 1. Using the Right Tool for the Job
+	- 2. Source Optimization
+	- 3. Transform Optimization
+	- 3. Network Settings 
+	- 4. Destination Performance Enhancements 
+		- 1. Fast Load
+		- 2. Table Lock on Insert Operations
+		- 3. Rows Per Batch
+		- 4. Maximum Insert Commit Size 
 
 11. Deploying SSIS Package
 	- 1. 2005 & 2008  : Package Deployment Model
@@ -271,4 +300,9 @@ Demo
 	- 3. SSIS Reports
 		- Reports -> All Executions
         - Prebuilt dashboard and reports for package executions
+ 
+ 
+ 16. Common Errors
+	- 1. Cannot convert between unicode and nonunicode data types - (DT_STR, 120, 1252) "Current"
+	
  

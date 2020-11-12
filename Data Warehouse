@@ -1,27 +1,39 @@
 Data Warehouse:
-1. Why not report from Transactional System?
+1. Why not report from Transactional System (OLTP)?
 	- 1. Designed for INSERT/UPDATE
 	- 2. Getting required report data may involve multiple joins i.e. lengthy queries
 	- 3. Usually dosen't store history 
 	- 4. Reporting on this database can slow down the application it is used for
 	
 2. Why build a Data Warehouse?
-	- 1. Optimized Reporting
-	- 2. Archival of Data
-	- 3. Consolidation of Data
-	
-3. Dimensional Model
+	- 1. Optimized Reporting   - Designed for faster report design and results 
+	- 2. Archival of Data      - Can store historical versions of data
+	- 3. Consolidation of Data - Central hub for consolidating multiple data sources 
+	                             i.e. Salesforce, Sharepoint, Access, Excel, SQL 
+
+3. Traditional Warehouse Development Methods
+	- 1. Waterfall Technique
+		- 1. Needed all requirement upfront 
+		- 2. Sometimes 6 months before results
+		- 3. Hard to react 
+	- 2. Agile Technique
+		- 1. Development done in iterations in scrum/sprint generally 1 month 
+		- 2. complete deliverables 
+		- 3. Easy to adpat 
+		- 4. Prioritization Feasibility Diagram (Feasibility vs. Business Impact)
+		
+4. Dimensional Model
 	- 1. Highly Denormalized - Table merged logically for reporting
 	- 2. Table Types - Fact and Dimension Tables 
 	- 3. Only fields Needed for Reporting 
 	
-4. Dimension Table
+5. Dimension Table
 	- 1. Answer WHERE clause
 	- 2. Wide Tables 
 	- 3. Contain Surrogate Key 
 
-5. Fact Table
-	- 1. Stored Metric Data
+6. Fact Table
+	- 1. Stored Metric Data, e.g. Price, Quantity, Duration
 	- 2. Relationships - Fact tables intersect dimensions
 	- 3. Types: 
 		- 1. Transactional
@@ -29,14 +41,25 @@ Data Warehouse:
 		- 3. Accumulating snapshot
 	- Surrogate keys, not business keys (alternate keys), are stored in the fact tables.
 	
-6. Surrogate Keys
+7. Surrogate Keys
+	- 1. Identity Column generated in DW, we cannot use Identity Column from Transactional System 
+	- 2. Insulates from Source Changes
+	- 3. Allows for Historical Changes
 
-7. Dimension Types
+8. Dimension Types
 	- 1. Type 0: Fixed, non changing 
 	- 2. Type 1: Changing attribute, no history kept
-	- 3. Type 2: Changing attribute, keeps historical changes
+	- 3. Type 2: Historical attribute, keeps historical changes
+	- 4. Different columns in a DIM table can be of different types
 	
-8. Star Schema
+9. Star Schema
+	- 1. De-normalized: Fact table stores relationship to each dimension tables 
+	- 2. best case - 1 JOIN 
 
-9. Snowflake Schema
-
+10. Snowflake Schema
+	- 1. Normalized: 
+	- 2. affect performance and T-SQL queries will have mutiple joins  
+	- 3. Avoid this if we can 
+	- 4. Sometimes dimension needs to be broken out
+	- 5. e.g. break product dimension and store product description it seperate dim table and have SK in product dim table
+	

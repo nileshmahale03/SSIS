@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{A6E19127-BC44-4920-96EB-EC89503732EF}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{59C8D854-2477-4B04-B763-67195DFC6E9B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1522,35 +1522,33 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="203,42"
-          Id="Package\DFT - DimProduct2 load\OLE DB Source"
-          TopLeft="379,20.5" />
+          Size="121,42"
+          Id="Package\DFT - DimProduct2 load\Union All"
+          TopLeft="420,428.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DFT - DimProduct2 load\Derived Column 1"
+          TopLeft="399,530.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\DFT - DimProduct2 load\Slowly Changing Dimension"
           TopLeft="376,122.5" />
-        <EdgeLayout
-          Id="Package\DFT - DimProduct2 load.Paths[OLE DB Source Output]"
-          TopLeft="480.5,62.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DFT - DimProduct2 load\OLE DB Command"
+          TopLeft="253.5,326.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\DFT - DimProduct2 load\OLE DB Command 1"
+          TopLeft="542,224.5" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\DFT - DimProduct2 load\OLE DB Source"
+          TopLeft="379,20.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DFT - DimProduct2 load\Insert Destination"
+          TopLeft="399,632.5" />
         <NodeLayout
           Size="154,42"
           Id="Package\DFT - DimProduct2 load\Derived Column"
@@ -1591,126 +1589,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\DFT - DimProduct2 load\OLE DB Command"
-          TopLeft="253.5,326.5" />
-        <EdgeLayout
-          Id="Package\DFT - DimProduct2 load.Paths[Derived Column Output]"
-          TopLeft="339.5,266.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\DFT - DimProduct2 load\Union All"
-          TopLeft="420,428.5" />
-        <EdgeLayout
-          Id="Package\DFT - DimProduct2 load.Paths[New Output]"
-          TopLeft="481.416666666667,164.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,264"
-              Start="0,0"
-              End="0,256.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,256.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,122.533203125,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - DimProduct2 load.Paths[OLE DB Command Output]"
-          TopLeft="336.5,368.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
-              Start="0,0"
-              End="125.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453508" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453508"
-                    Point2="0,35.5301794453508"
-                    Point3="4,35.5301794453508" />
-                  <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453508" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453508"
-                    Point2="125.166666666667,35.5301794453508"
-                    Point3="125.166666666667,39.5301794453508" />
-                  <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="54.5833333333333,40.5301794453508,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\DFT - DimProduct2 load\Derived Column 1"
-          TopLeft="399,530.5" />
-        <EdgeLayout
-          Id="Package\DFT - DimProduct2 load.Paths[Union All Output 1]"
-          TopLeft="480.5,470.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\DFT - DimProduct2 load\Insert Destination"
-          TopLeft="399,632.5" />
         <EdgeLayout
           Id="Package\DFT - DimProduct2 load.Paths[Derived Column Output1]"
           TopLeft="480.5,572.5">
@@ -1733,10 +1611,28 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\DFT - DimProduct2 load\OLE DB Command 1"
-          TopLeft="542,224.5" />
+        <EdgeLayout
+          Id="Package\DFT - DimProduct2 load.Paths[Derived Column Output]"
+          TopLeft="339.5,266.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - DimProduct2 load.Paths[Changing Attribute Updates Output]"
           TopLeft="530.75,164.5">
@@ -1773,17 +1669,111 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - DimProduct2 load.Paths[Union All Output 1]"
+          TopLeft="480.5,470.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - DimProduct2 load.Paths[OLE DB Source Output]"
+          TopLeft="480.5,62.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - DimProduct2 load.Paths[OLE DB Command Output]"
+          TopLeft="336.5,368.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453508"
+                    Point2="0,35.5301794453508"
+                    Point3="4,35.5301794453508" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453508" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453508"
+                    Point2="125.166666666667,35.5301794453508"
+                    Point3="125.166666666667,39.5301794453508" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - DimProduct2 load.Paths[New Output]"
+          TopLeft="481.416666666667,164.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,264"
+              Start="0,0"
+              End="0,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,122.533203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\DFT - DimProduct2 load\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\DFT - DimProduct2 load\Slowly Changing Dimension">
     <Properties>
@@ -1864,6 +1854,14 @@
   &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT - DimProduct2 load\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
