@@ -39,7 +39,8 @@ Data Warehouse:
 		- 1. Transactional
 		- 2. Periodic snapshot
 		- 3. Accumulating snapshot
-	- Surrogate keys, not business keys (alternate keys), are stored in the fact tables.
+		- 4. Factless fact table ? 
+	- Surrogate keys, not business keys (i.e. alternate keys), are stored in the fact tables.
 	
 7. Surrogate Keys
 	- 1. Identity Column generated in DW, we cannot use Identity Column from Transactional System 

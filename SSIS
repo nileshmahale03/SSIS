@@ -184,6 +184,10 @@ Demo
 	- 3. Variables - Change a Variable Output dynamically.
 	- 4. Precedence Constraints - Change the Constraint Direction dynamically.
 	- 5. Data Flow - e.g. Conditional Split, Derived Column 
+	- 6. Most Commonly Used
+		- 1. ISNULL
+		- 2. REPLACENULL - more like a ISNULL in T-SQL 
+		- 3. DATE
 
 8. Loading a Dimension Table
     - Need 3 things - Source -> Decision Point -> Column Type
@@ -217,6 +221,11 @@ Demo
 			- Stores source table and destination table in memory for comparison
 	- 6. Design Pattern 3: Upsert Pattern using Merge 
 		- Source -> Merge -> Conditional Split -> Destination 
+	- 7. CHECKSUM AND HASHBYTES
+		- ADV: Advantage of hashing is that it minimizes the columns that must be brought in for comparison.
+		- DIS: You have to type out each column name
+		       Null values in columns
+			   All columns must be converted to varchar
 	
 9. Loading a Fact Table
 	- All the dimensions all loaded first then we load the fact tables since we have lookup against dimensions
@@ -243,6 +252,7 @@ Demo
 	- 1. Using the Right Tool for the Job
 	- 2. Source Optimization
 	- 3. Transform Optimization
+		- 1. Lookup Transformation - only bring in required fields
 	- 3. Network Settings 
 	- 4. Destination Performance Enhancements 
 		- 1. Fast Load
@@ -301,8 +311,8 @@ Demo
 		- Reports -> All Executions
         - Prebuilt dashboard and reports for package executions
  
- 
  16. Common Errors
 	- 1. Cannot convert between unicode and nonunicode data types - (DT_STR, 120, 1252) "Current"
+	
 	
  
